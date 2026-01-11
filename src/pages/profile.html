@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Perfil do Usuário</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header class="header">
+    <h1 class="logo">AGENDE<span>ONLINE</span></h1>
+    <nav class="nav">
+      <ul>
+        <li><a href="about.html">Sobre</a></li>
+      </ul>
+    </nav>
+    <div>
+      <button class="btn-secondary" onclick="window.location.href='../../index.html'">Home</button>
+    </div>
+  </header>
+
+  <main class="container" style="padding:2rem;">
+    <h2>Perfil</h2>
+    <div id="profile" style="margin-top:1rem;">
+      <p><strong>Nome:</strong> <span id="p-name">—</span></p>
+      <p><strong>Email:</strong> <span id="p-email">—</span></p>
+      <p><strong>Passaporte:</strong> <span id="p-passport">—</span></p>
+    </div>
+
+    <div style="margin-top:1.5rem;">
+      <button onclick="window.location.href='edit-profile.html'" class="btn-primary">Editar Perfil</button>
+      <button onclick="logout()" class="btn-secondary">Logout</button>
+    </div>
+  </main>
+
+  <script src="../js/api-mock.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    apiMock.getProfile().then(p => {
+      document.getElementById('p-name').textContent = p.name;
+      document.getElementById('p-email').textContent = p.email;
+      document.getElementById('p-passport').textContent = p.passport;
+    });
+
+    function logout() {
+      window.location.href = '../../index.html';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendamento de Visto</title>
+  <link rel="stylesheet" href="../css/formulario.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Agendamento de Visto</h1>
+    <p class="subtitle">Preencha os dados abaixo para solicitar seu visto</p>
+
+    <form class="form">
+      <div class="form-group">
+        <label for="nome">Nome Completo</label>
+        <input type="text" id="nome" placeholder="Digite seu nome completo" required>
+      </div>
+
+      <div class="row">
+        <div class="form-group">
+          <label for="passaporte">Número do Passaporte</label>
+          <input type="text" id="passaporte" placeholder="Ex: AB123456" required>
+        </div>
+
+        <div class="form-group">
+          <label for="bi">Número do BI</label>
+          <input type="text" id="bi" placeholder="Ex: AB123456789LA123" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nacionalidade">Nacionalidade</label>
+        <input type="text" id="nacionalidade" placeholder="Sua nacionalidade" required>
+      </div>
+
+      <div class="row">
+        <div class="form-group">
+          <label for="nascimento">Data de Nascimento</label>
+          <input type="date" id="nascimento" required>
+        </div>
+
+        <div class="form-group">
+          <label for="expiracao">Data de Expiração</label>
+          <input type="date" id="expiracao" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="categoria">Categoria do Visto</label>
+        <select id="categoria" required>
+          <option value="">Selecione uma categoria</option>
+          <option value="turismo">Turismo</option>
+          <option value="negocios">Negócios</option>
+          <option value="estudo">Estudo</option>
+          <option value="trabalho">Trabalho</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Foto Tipo Passaporte</label>
+        <div class="upload-box">
+          <input type="file" id="foto" accept="image/png, image/jpeg" required>
+          <p>Clique para fazer upload<br><small>Formato: JPG, PNG • Máx: 5MB</small></p>
+        </div>
+      </div>
+
+      <button type="submit" class="btn">Solicitar Agendamento</button>
+    </form>
+
+    <p class="footer">Seus dados estão protegidos e serão utilizados apenas para o processo de visto.</p>
+  </div>
+</body>
+  <script src="../js/main.js"></script>
+  <script>
+    document.querySelector('.form').addEventListener('submit', function(e){
+      e.preventDefault();
+      app.showToast('Solicitação enviada (mock)');
+      // In a real flow we'd POST the form to the API
+    });
+  </script>
+</html>

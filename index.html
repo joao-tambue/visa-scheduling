@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TASKManager - Creative Digital Agency</title>
+    <link rel="stylesheet" href="./src/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&family=Dancing+Script:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mozilla+Text:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="logo">AGENDE<span>ONLINE</span></h1>
+      <nav class="nav">
+        <ul>
+          <li><a href="./src/pages/about.html">Sobre</a></li>
+          <li><a href="#">Casos</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </nav>
+      <div>
+        <button class="btn-secondary" onclick="redirecionarParaLogin()">Login</button>
+        <button class="btn-cadastro" onclick="redirecionarParaCadastro()">Criar conta</button>
+      </div>
+    </header>
+
+    <script>
+        function redirecionarParaLogin() {
+            window.location.href = "./src/pages/login.html";
+        }
+    </script>
+
+    <main class="hero">
+      <div class="hero-text">
+        <h2>
+          Marque o seu <span class="highlight">Agendamento Online </span> para conseguir
+          obter o seu cartão visa de forma rapido e facil
+        </h2>
+        <p>Não perca mais o seu tempo e bora começar com o processo !</p>
+        <button class="btn-primary" onclick="redirecionarParaForm()">Começar</button>
+      </div>
+
+        <script>
+            function redirecionarParaLogin() {
+                window.location.href = "./src/pages/login.html";
+            }
+            function redirecionarParaCadastro() {
+                window.location.href = "./src/pages/cadastro.html";
+            }
+            function redirecionarParaForm () {
+                window.location.href = "./src/pages/face-register.html";
+            }
+        </script>
+
+      <div class="hero-image">
+        <img src="./src/assets/undraw_newsfeed_8ms9.svg" alt="Illustration" />
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>© 2025 Agendamento Online</p>
+    </footer>
+  </body>
+</html>

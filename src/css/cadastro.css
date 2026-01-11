@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: #19172a;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.register-box {
+  background: #19172a;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 320px;
+}
+
+.title {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.label {
+  color: #b3b3b3;
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+input {
+  width: 100%;
+  background-color: #24223a;
+  border: none;
+  outline: none;
+  padding: 10px 12px;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 14px;
+}
+
+input::placeholder {
+  color: #777;
+}
+
+.register-btn {
+  margin-top: 15px;
+  background-color: #a29bfe;
+  color: #19172a;
+  font-weight: 600;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.register-btn:hover {
+  background-color: #b3aaff;
+}
+
+.mensage-cadastro {
+  color: #ff6b6b;
+  font-size: 13px;
+  margin-top: 8px;
+  text-align: center;
+}
+
+p {
+  color: #b3b3b3;
+  font-size: 13px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+p span {
+  color: #a29bfe;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+p span:hover {
+  color: #b3aaff;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Editar Perfil</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header class="header">
+    <h1 class="logo">AGENDE<span>ONLINE</span></h1>
+    <div>
+      <button class="btn-secondary" onclick="window.location.href='profile.html'">Voltar</button>
+    </div>
+  </header>
+
+  <main class="container" style="padding:2rem;">
+    <h2>Editar Perfil</h2>
+    <form id="editForm" style="margin-top:1rem; max-width:600px;">
+      <label>Nome completo</label>
+      <input id="name" type="text" />
+
+      <label>Email</label>
+      <input id="email" type="email" />
+
+      <label>Passaporte</label>
+      <input id="passport" type="text" />
+
+      <div style="margin-top:1rem;">
+        <button type="submit" class="btn-primary">Salvar</button>
+        <button type="button" class="btn-secondary" onclick="window.location.href='profile.html'">Cancelar</button>
+      </div>
+    </form>
+  </main>
+
+  <script src="../js/api-mock.js"></script>
+  <script>
+    apiMock.getProfile().then(p => {
+      document.getElementById('name').value = p.name;
+      document.getElementById('email').value = p.email;
+      document.getElementById('passport').value = p.passport;
+    });
+
+    document.getElementById('editForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const data = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        passport: document.getElementById('passport').value
+      };
+      apiMock.updateProfile(data).then(()=>{
+        window.location.href = 'profile.html';
+      });
+    });
+  </script>
+</body>
+</html>

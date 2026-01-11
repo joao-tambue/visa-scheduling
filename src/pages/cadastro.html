@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register - TASKManager</title>
+  <link rel="stylesheet" href="../css/cadastro.css" />
+</head>
+<body>
+  <div class="container">
+    <form id="registerForm" class="register-box">
+      <h1 class="title">Create Account</h1>
+
+      <label for="name" class="label">Full Name</label>
+      <input type="text" id="name" placeholder="Please insert your full name" />
+
+      <label for="email" class="label">Your email</label>
+      <input type="email" id="email" placeholder="Please insert your e-mail" />
+
+      <label for="password" class="label">Password</label>
+      <input type="password" id="password" placeholder="Please insert your password" />
+
+      <label for="confirm-password" class="label">Confirm Password</label>
+      <input type="password" id="confirm-password" placeholder="Please confirm your password" />
+
+      <button id="registerBtn" class="register-btn" type="submit">Sign up</button>
+
+      <p class="error-mensage" id="error"></p>
+
+      <p>Já tem uma conta? <span onclick="redirecionarParaLogin()">Entrar</span></p>
+    </form>
+  </div>
+</body>
+</body>
+<script type="module" src="../js/pages/register.js"></script>
+<script>
+  function redirecionarParaLogin() { window.location.href = './login.html'; }
+</script>
+</html>
