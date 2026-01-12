@@ -2,8 +2,9 @@ from flask import Blueprint, request
 from app.models.user import User
 from app.views.responses import ResponseView
 from app.controllers.auth_controller import token_required
-from app.services.face_recognition_service import FaceRecognitionService
-
+# Import face recognition service lazily inside endpoints to allow starting
+# the app when heavy native dependencies are not installed yet.
+ 
 user_bp = Blueprint('user', __name__)
 
 @user_bp.route('/profile', methods=['GET'])
@@ -52,6 +53,7 @@ def register_face():
     file = request.files['image']
     if file.filename == '':
         return ResponseView.error('Nenhum arquivo selecionado')
+    from app.services.face_recognition_service import FaceRecognitionService
     result = FaceRecognitionService.register_face(user_id, file)
     if result['success']:
         return ResponseView.success(result['data'], 'Face cadastrada com sucesso', 201)
@@ -64,6 +66,7 @@ def recognize_face():
     file = request.files['image']
     if file.filename == '':
         return ResponseView.error('Nenhum arquivo selecionado')
+    from app.services.face_recognition_service import FaceRecognitionService
     result = FaceRecognitionService.recognize_face(file)
     if result['success']:
         return ResponseView.success(result['data'], 'Face reconhecida com sucesso')
