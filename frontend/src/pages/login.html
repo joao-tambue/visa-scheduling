@@ -11,34 +11,33 @@
     <form id="loginForm" class="login-box">
       <h1 class="title">Login</h1>
 
-      <label for="email" class="label">Your email</label>
-      <input type="email" id="email" placeholder="Please insert your e-mail" />
+      <label for="username" class="label">Nome do usuario</label>
+      <input type="text" id="username" placeholder="Please insert your username" />
 
       <label for="password" class="label">Password</label>
       <input type="password" id="password" placeholder="Please insert your password" />
 
-      <button type="submit" id="signinBtn" class="signin-btn">Sign in</button>
+      <button type="submit" class="signin-btn">Sign in</button>
 
       <p>Não tem uma conta? <span onclick="redirecionarParaCadastro()">Criar conta</span></p>
     </form>
   </div>
 </body>
 </body>
-<script src="../js/api-mock.js"></script>
 <script src="../js/main.js"></script>
 <script type="module" src="../js/pages/login.js"></script>
 <script>
   function redirecionarParaCadastro() { window.location.href = './cadastro.html'; }
 
-  document.getElementById('signinBtn').addEventListener('click', function(){
-    const email = document.getElementById('email').value;
+  document.getElementById('loginForm').addEventListener('submit', function(event){
+    const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
-    apiMock.login(email, password).then(res => {
+    apiMock.login(username, password).then(res => {
       if (res && res.token) {
         sessionStorage.setItem('authToken', res.token);
         window.location.href = 'profile.html';
       } else {
-        alert('Erro no login (mock)');
+        alert('Login failed. Please check your credentials and try again.');
       }
     });
   });
